@@ -18,7 +18,7 @@
    <children>
       <VBox alignment="CENTER" prefHeight="650.0" prefWidth="1000.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <FlowPane fx:id="flowPane" alignment="CENTER" hgap="20.0" prefHeight="550.0" vgap="20.0">
+            <FlowPane fx:id="cardFlowPane" alignment="CENTER" hgap="20.0" prefHeight="550.0" vgap="20.0">
                <children>
                   <ImageView fitHeight="300.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -30,12 +30,12 @@
                         <Image url="@images/2_of_clubs.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="300.0" fitWidth="175.0" layoutX="520.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="300.0" fitWidth="175.0" layoutX="605.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/2_of_clubs.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="300.0" fitWidth="175.0" layoutX="605.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="300.0" fitWidth="175.0" layoutX="520.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/2_of_clubs.png" />
                      </image>
