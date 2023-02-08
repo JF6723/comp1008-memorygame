@@ -11,8 +11,3 @@
 .button{
     -fx-background-radius: 40px;
 }
-
-.slider{
-    -fx-text-fill: #e8eaf6;
-    -fx-tick-label-fill: #e8eaf6;
-}
