@@ -22,12 +22,7 @@ public class MemoryCard extends Card{
 
     public boolean isSameCard(MemoryCard otherCard)
     {
-        if (this.getCardValue() != otherCard.getCardValue())
-            return false;
-
-        if (!this.getSuit().equals(otherCard.getSuit()))
-            return false;
-
-        return true;
+        return (this.getSuit().equals(otherCard.getSuit()) &&
+                this.getFaceName().equals(otherCard.getFaceName()));
     }
 }
