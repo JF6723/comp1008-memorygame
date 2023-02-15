@@ -26,11 +26,14 @@ public class MemoryGameController implements Initializable {
 
     private ArrayList<MemoryCard> cardsInGame;
     private MemoryCard firstCard, secondCard;
+    private int numOfGuesses, correctGuesses;
 
     @FXML
     void playAgain() {
         firstCard = null;
         secondCard = null;
+        numOfGuesses=0;
+        correctGuesses=0;
 
         DeckOfCards deck = new DeckOfCards();
         deck.shuffle();
@@ -44,6 +47,7 @@ public class MemoryGameController implements Initializable {
             cardsInGame.add(new MemoryCard(cardDealt.getSuit(),cardDealt.getFaceName()));
         }
         Collections.shuffle(cardsInGame);
+        flipAllCards();
 
         //Give each ImageView a number and attach a click listener
         initializeImageView();
@@ -51,7 +55,6 @@ public class MemoryGameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        flipAllCards();
         playAgain();
     }
 
@@ -69,7 +72,10 @@ public class MemoryGameController implements Initializable {
         {
             //casting the generic Node object to an ImageView object
             ImageView imageView = getImageView(i);
-            imageView.setImage(backOfCard);
+            if (cardsInGame.get(i).isMatched())
+                imageView.setImage(cardsInGame.get(i).getImage());
+            else
+                imageView.setImage(backOfCard);
         }
     }
 
@@ -97,8 +103,11 @@ public class MemoryGameController implements Initializable {
      */
     private void flipCard(int index)
     {
-        displayCardsInGame();
+//        displayCardsInGame();
         ImageView imageView = getImageView(index);
+
+        if (firstCard==null && secondCard==null)
+            flipAllCards();
 
         //no cards are selected
         if (firstCard == null)
@@ -108,10 +117,21 @@ public class MemoryGameController implements Initializable {
         }
         else if (secondCard == null)
         {
+            numOfGuesses++;
             secondCard = cardsInGame.get(index);
             imageView.setImage(secondCard.getImage());
             checkForMatch();
         }
+        updateLabels();
+    }
+
+    /**
+     * This method will show the number of guesses and the number of correct guesses in the display
+     */
+    private void updateLabels()
+    {
+        correctGuessLabel.setText(Integer.toString(correctGuesses));
+        guessesLabel.setText(Integer.toString(numOfGuesses));
     }
 
     /**
@@ -124,7 +144,10 @@ public class MemoryGameController implements Initializable {
         {
             firstCard.setMatched(true);
             secondCard.setMatched(true);
+            correctGuesses++;
         }
+        firstCard=null;
+        secondCard=null;
     }
 
     /**
