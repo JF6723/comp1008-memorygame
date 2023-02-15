@@ -8,6 +8,10 @@ public class MemoryCard extends Card{
         this.matched = false;
     }
 
+    /**
+     * This method returns true if the card has been matched with another card
+     * @return boolean (true or false)
+     */
     public boolean isMatched() {
         return matched;
     }
