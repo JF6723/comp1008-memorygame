@@ -1,8 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 
 <AnchorPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.w23comp1008lhw5memorygame.WarGameController">
-
+   <children>
+      <VBox alignment="CENTER" layoutY="-14.0" prefHeight="650.0" prefWidth="1000.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" spacing="50.0">
+               <children>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Label text="Player 1" />
+                        <ImageView fitHeight="332.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/back_of_card.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="player1CardCountLabel" text="26 Cards" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Label />
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <ImageView fx:id="player1ImageView" fitHeight="332.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/back_of_card.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="player2ImageView" fitHeight="332.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/back_of_card.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Label fx:id="cardsInPileLabel" text="2 Cards" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Label text="Player 2" />
+                        <ImageView fitHeight="332.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/back_of_card.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="player2CardCountLabel" text="26 Cards" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="playButton" mnemonicParsing="false" onAction="#playHand" text="Play Hand" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
